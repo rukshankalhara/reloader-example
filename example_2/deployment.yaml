@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: sample-database-app
+  name: sample-database-app
+  annotations:
+    reloader.stakater.com/auto: "true"
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: sample-database-app
+  template:
+    metadata:
+      labels:
+        app: sample-database-app
+    spec:
+      containers:
+      - image: mathisve/reloader-example-2:latest
+        name: example-1
+        envFrom:
+        - secretRef:
+            name: database-secret
+        resources:
+          limits:
+            memory: 10Mi
+            cpu: 10m
+        imagePullPolicy: Always
