@@ -10,4 +10,4 @@ helm repo update
 helm install reloader -n reloader --create-namespace stakater/reloader
 ```
 
-You can find the original installation instructions [here](https://github.com/stakater/Reloader?tab=readme-ov-file#deploying-to-kubernetes)!
+You can find the original installation instructions [here](https://github.com/stakater/Reloader?tab=readme-ov-file#deploying-to-kubernetes)!# argo-repo
